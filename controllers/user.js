@@ -24,12 +24,12 @@ exports.adduser = async (req, res, next) => {
     ) {
       return res.status(409).json({ err: "user already exist" });
     }
-    
+
     bcrypt.hash(password, 10, async (err, hash) => {
       await userdetails.create({ name, email, phone, password: hash });
       res.status(201).json({ meessage: "User created succesfully" });
     });
   } catch (err) {
-    return res.status(409).json({ err: "user already exist" });
+    return res.status(409).json({ err: "Something went wrong" });
   }
 };
