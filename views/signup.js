@@ -1,5 +1,3 @@
-/** @format */
-
 const btn = document.getElementById("signup");
 
 btn.addEventListener("click", postuser);
@@ -21,15 +19,16 @@ async function postuser(e) {
     };
     await axios.post("http://localhost:3000/user", obj);
     alert("User Created Succesfully");
+    window.location.href = "./login.html";
   } catch (err) {
     if (err.response.status == 409) {
       form.innerHTML += `<div style="color:red;">User Already Exist !</div>`;
     } else {
       form.innerHTML += `<div style="color:red;">All Fields are Mandatory</div>`;
-
-      form.onclick = function () {
-        location.reload();
-      };
     }
+
+    form.onclick = function () {
+      location.reload();
+    };
   }
 }
