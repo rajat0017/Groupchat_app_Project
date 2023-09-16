@@ -16,6 +16,7 @@ async function loginrequest(e) {
     const response = await axios.post("http://localhost:3000/login", obj);
     if (response.status == 200) {
       alert(response.data.message);
+      window.location.href = "./chats.html";
       localStorage.setItem("token", response.data.token);
     }
   } catch (err) {
