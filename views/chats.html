@@ -18,19 +18,19 @@
 
         </ul>
     </div>
-    <div class="chat-container">
+    <div class="chat-container" id="container">
         <div class="message-thread">
             <div class="message received">
                 <p class="message-text"><strong>Contact 1:</strong> Hello!</p>
             </div>
-            <div class="message sent">
-                <p class="message-text"><strong>You:</strong> Hi there! How are you doing?</p>
-            </div>
+
         </div>
     </div>
     <div class="message-input">
-        <input type="text" placeholder="Type a message...">
-        <button>Send</button>
+        <input type="text" id="message" placeholder="Type a message...">
+        <button id="btn">Send</button>
     </div>
+    <script src="chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 </body>
 </html>

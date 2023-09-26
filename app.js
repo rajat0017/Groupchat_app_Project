@@ -20,8 +20,16 @@ app.use(bodyParser.urlencoded({extended:false}));
 const sequelize = require('./utils/database');
 
 const userRoutes = require('./routes/userRoute');
+const messageRoute = require('./routes/messageRoute');
 
 app.use(userRoutes);
+app.use(messageRoute);
+
+const user= require('./models/user');
+const message= require('./models/message');
+
+user.hasMany(message);
+message.belongsTo(user);
 
 sequelize
   .sync()

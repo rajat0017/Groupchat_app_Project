@@ -19,6 +19,7 @@ async function loginrequest(e) {
       window.location.href = "./chats.html";
       localStorage.setItem("token", response.data.token);
     }
+    
   } catch (err) {
     if (err.response.status == 400) {
       form.innerHTML += `<div style="color:red;">User not authorized</div>`;

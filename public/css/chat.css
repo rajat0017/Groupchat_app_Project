@@ -71,6 +71,8 @@ body {
   background-color: #dcf8c6;
   text-align: right;
   margin-left: auto;
+  margin-bottom: 20px;
+  width: 50rem;
 }
 
 .message.received {
@@ -111,4 +113,9 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-right: 20px;
+}
+
+.chat-container{
+  height: 600px;
+ overflow-y: scroll;
 }
