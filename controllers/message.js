@@ -1,5 +1,6 @@
 const messages = require('../models/message');
 const User = require('../models/user')
+const Sequelize = require('sequelize');
 
 exports.storeMessage = async (req, res, next)=> {
     try {
@@ -14,8 +15,16 @@ exports.storeMessage = async (req, res, next)=> {
 exports.getMessages = async(req, res, next)=> {
     try {
         const Messages = await messages.findAll();
-        res.status(200).json({ allMessages: Messages });
-
+        
+        // const recMesseges = await messages.findAll({
+        //     where: {
+        //         userId: {
+        //             [Sequelize.Op.not]: req.user.id
+        //         }
+        //     }
+        // });
+        
+        res.status(200).json({ allMessages: Messages, id: req.user.id});
     } catch (err) {
         console.log(err);
         res.status(500).json({ error: err })

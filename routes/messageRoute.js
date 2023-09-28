@@ -8,6 +8,6 @@ const userAuthentication = require('../middleware/auth');
 
 router.post('/message',userAuthentication.authentication, userController.storeMessage);
 
-router.get('/getallmessagaes',userAuthentication.authentication, userController.getMessages);
+router.get('/getallmessages',userAuthentication.authentication, userController.getMessages);
 
 module.exports= router;
